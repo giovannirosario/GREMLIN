@@ -1,0 +1,21 @@
+				---- Projeto GREMLIN ----
+Realizado pelo aluno Giovanni Franco de Paula Rosário, matricula 2015031750, para a disciplica de Estrutura de Dados Básicas I.
+O trabalho esta separado da maneira;
+a classe StoragePool e a sobrecarga dos operadores new e delete se encontram nos arquivos mempool_common.cpp e mempool_common.h
+a classe SLPool se encontra nos arquivos gm.cpp e gm.h
+O arquivo main.cpp é um codigo-cliente que demonstra como SLPool funciona corretamente;
+O arquivo teste_comparativo.cpp testa o desempenho de SLPool de maneira comparativa com o SO;
+
+				---- Compilamento ---- 
+O comando de compilacao esta no arquivo makefile.
+para compilar, basta digitar 'make' no terminal, será gerado o executavel 'main' que exemplifica passo a passo o uso do Gerenciador de Memória e o executavel 'teste_comparativo' que teste o desempenho de SLPool de maneira comparativa com o SO;
+
+				---- Observações ----
+12/11/2015
+1ª OBS:  O programa executa corretamente, porém o uso dos operadores new e delete sobrecarregados não funciona.
+	Instruções de uso:	
+	Para iniciar o pool, deve-se passar a quantidade de bytes como parametro do construtor, ex: SLPool pool(1024);
+	Para requisitar memoria do pool, deve-se usar a funcao Allocate e passar o tamanho de bytes como parametro, ex: void* ptr = pool.Allocate(180);
+	Para devolver memoria ao pool, deve-se passar como parametro o ponteiro que foi recebido em Allocate, ex:  pool.Fre(ptr);
+
+2ª OBS: O programa não da suporte a politica Best-fit;
